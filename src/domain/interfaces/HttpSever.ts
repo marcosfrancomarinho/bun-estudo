@@ -1,6 +1,6 @@
 import type { HttpContext } from './HttpContext';
 
-type Method = 'get' | 'post' | 'delete' | 'put';
+export type Method = 'get' | 'post' | 'delete' | 'put';
 
 export interface HttpServer {
   listen(port: number): void;

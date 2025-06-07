@@ -1,5 +1,5 @@
 import type { HttpContext } from '../../domain/interfaces/HttpContext';
-import type { HttpServer } from '../../domain/interfaces/HttpSever';
+import type { HttpServer, Method } from '../../domain/interfaces/HttpSever';
 import type { Express, Request, Response } from 'express';
 import express from 'express';
 import cors from 'cors';
@@ -18,7 +18,7 @@ export class ExpressHttpServer implements HttpServer {
     });
   }
 
-  public on(method: 'get' | 'post' | 'delete' | 'put', path: string, handler: (httpContext: HttpContext) => void): void {
+  public on(method: Method, path: string, handler: (httpContext: HttpContext) => void): void {
     this.app[method](path, (request: Request, response: Response) => {
       const httpContext = new ExpressHttpContext(request, response);
       handler(httpContext);
