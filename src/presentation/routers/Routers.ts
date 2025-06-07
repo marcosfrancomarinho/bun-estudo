@@ -1,4 +1,4 @@
-import type { Container } from '../../Container/Container';
+import type { Container } from '../../container/Container';
 import type { HttpServer } from '../../domain/interfaces/HttpSever';
 
 export class Routers {

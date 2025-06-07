@@ -1,4 +1,3 @@
-import { use } from 'chai';
 import { User } from '../../domain/entities/User';
 import type { FindUser } from '../../domain/interfaces/FindUser';
 import { Age } from '../../domain/valuesobejct/Age';

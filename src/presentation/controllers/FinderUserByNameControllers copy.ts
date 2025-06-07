@@ -5,13 +5,13 @@ import type { HttpControllers } from '../../domain/interfaces/HttpControllers';
 type ParamsQuery = { name: string };
 
 export class FinderUserByNameControllers implements HttpControllers {
-  constructor(private finderUserUserCase: FinderUserUseCase) {}
+  constructor(private finderUserUseCase: FinderUserUseCase) {}
 
   public execute(httpContext: HttpContext): void {
     try {
       const { name } = httpContext.requestQuery<ParamsQuery>();
       const input: RequestFinderUserDTO = new RequestFinderUserDTO(name);
-      const output = this.finderUserUserCase.findByName(input);
+      const output = this.finderUserUseCase.findByName(input);
       httpContext.send(200, { userId: output.id, name: output.name, age: output.age });
     } catch (error) {
       httpContext.handlerError(error);

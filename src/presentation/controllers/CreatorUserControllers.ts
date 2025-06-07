@@ -6,12 +6,12 @@ import type { HttpControllers } from '../../domain/interfaces/HttpControllers';
 type ParamsBody = { name: string; age: number };
 
 export class CreatorUserControllers implements HttpControllers {
-  constructor(private ceatorUserHandler: CreatorUserUseCase) {}
+  constructor(private creatorUserHandler: CreatorUserUseCase) {}
   execute(httpContext: HttpContext): void {
     try {
       const { name, age } = httpContext.requestBody<ParamsBody>();
       const input: RequestCreateUserDTO = new RequestCreateUserDTO(name, age);
-      const output = this.ceatorUserHandler.save(input);
+      const output = this.creatorUserHandler.save(input);
       httpContext.send(201, { userId: output.id, message: output.message });
     } catch (error) {
       httpContext.handlerError(error);

@@ -1,4 +1,4 @@
-import { Container } from './Container/Container';
+import { Container } from './container/Container';
 import type { HttpServer } from './domain/interfaces/HttpSever';
 import { ExpressHttpServer } from './infrastructure/http/ExpressHttpServer';
 import { Routers } from './presentation/routers/Routers';
