@@ -3,13 +3,13 @@ POST http://localhost:3000/create-user
 Content-Type: application/json
 
 {
-    "name":"pedro ramos",
+    "name":"pedro sampaio",
     "age":26
 }
 
 
 ###
-GET http://localhost:3000/find-user?name=pedro carlos
+GET http://localhost:3000/find-user?name=pedro sampaio
 
 
 ###

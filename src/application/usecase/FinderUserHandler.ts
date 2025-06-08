@@ -14,6 +14,7 @@ export class FinderUserHandler implements FinderUserUseCase {
     if (!user) throw new Error(`user ${name.getValue()} not found`);
     return new ResponseFinderUserDTO(user.getID(), name.getValue(), user.getAge());
   }
+  
   public findAll(): ResponseFinderUserDTO[] {
     const users: User[] | null = this.findUser.findAll();
     if (!users) throw new Error(`no users found`);

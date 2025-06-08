@@ -4,7 +4,7 @@ import { ExpressHttpServer } from './infrastructure/http/ExpressHttpServer';
 import { Routers } from './presentation/routers/Routers';
 
 function main(): void {
-  const port: number = Number(process.env.PORT ?? '8080');
+  const port: number = Number(process.env.PORT ?? '3000');
   const httpServer: HttpServer = new ExpressHttpServer();
   const routers: Routers = new Routers(httpServer);
   const container: Container = new Container();
